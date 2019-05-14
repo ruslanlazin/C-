@@ -27,16 +27,18 @@ namespace HeadsOrTails
 
         private void Heads_Button_Click(object sender, RoutedEventArgs e)
         {
-            Image coinImage = new Image();
-            coinImage.Source = new BitmapImage(new Uri("Images/Heads.bmp", UriKind.Relative));
-            ImageBox.Content = coinImage;
-            ImageBox.Visibility = Visibility.Visible;
+            SetImage("Images/Heads.bmp");
         }
 
         private void Tails_Button_Click(object sender, RoutedEventArgs e)
         {
+            SetImage("Images/Tails.bmp");
+        }
+
+        private void SetImage(String path)
+        {
             Image coinImage = new Image();
-            coinImage.Source = new BitmapImage(new Uri("Images/Tails.bmp", UriKind.Relative));
+            coinImage.Source = new BitmapImage(new Uri(path, UriKind.Relative));
             ImageBox.Content = coinImage;
         }
     }
