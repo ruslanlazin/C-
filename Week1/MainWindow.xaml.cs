@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Week1
+namespace HeadsOrTails
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,17 +25,19 @@ namespace Week1
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Heads_Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Hello world");
-            DisplayText.Content = "the rain in Spain";
-            DisplayText.Visibility = Visibility.Hidden;
-
+            Image coinImage = new Image();
+            coinImage.Source = new BitmapImage(new Uri("Images/Heads.bmp", UriKind.Relative));
+            ImageBox.Content = coinImage;
+            ImageBox.Visibility = Visibility.Visible;
         }
 
-        private void Image_Click(object sender, RoutedEventArgs e)
+        private void Tails_Button_Click(object sender, RoutedEventArgs e)
         {
-            DisplayText.Visibility = Visibility.Visible;
+            Image coinImage = new Image();
+            coinImage.Source = new BitmapImage(new Uri("Images/Tails.bmp", UriKind.Relative));
+            ImageBox.Content = coinImage;
         }
     }
 }
